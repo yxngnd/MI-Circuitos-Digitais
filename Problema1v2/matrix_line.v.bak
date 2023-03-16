@@ -1,0 +1,16 @@
+module matrix_line(V, CH2, CH1, CH0, S)
+	
+	input V, CH2, CH1, CH0;
+	output S;
+
+
+	assign L0 = (V & ~CH2 & ~CH1 & CH0);
+	assign L1 = (V & ~CH2 & CH1 & ~CH0);
+	assign L2 = (V & ~CH2 & CH1 & CH0);
+	assign L3 = (V & CH2 & ~CH1 & ~CH0);
+	assign L4 = (V & CH2 & ~CH1 & CH0);
+	assign L5 = (V & CH2 & CH1 & ~CH0);
+	assign L6 = (V & CH2 & CH1 & CH0);
+	assign S = (V & CH0) | (V & CH1) | (V & CH2);
+
+endmodule

@@ -1,0 +1,9 @@
+module decode_matrix();
+
+	assign C0 = (S & ~Ch7 & ~Ch6 & ~Ch5 & Ch4 & Ch3) | (S & ~Ch7 & ~Ch6 & Ch5 & ~Ch4 & Ch3) | (S & ~Ch7 & Ch6 & ~Ch5 & ~Ch4 & Ch3) | (S & Ch7 & ~Ch6 & ~Ch5 & ~Ch4 & Ch3);
+	assign C1 = (S & ~Ch7 & ~Ch6 & ~Ch5 & Ch4 & Ch3) | (S & ~Ch7 & ~Ch6 & Ch5 & Ch4 & ~Ch3) | (S & ~Ch7 & Ch6 & ~Ch5 & Ch4 & ~Ch3) | (S & Ch7 & ~Ch6 & ~Ch5 & Ch4 & ~Ch3);
+	assign C2 = (S & ~Ch7 & ~Ch6 & Ch5 & ~Ch4 & Ch3) | (S & ~Ch7 & ~Ch6 & Ch5 & Ch4 & ~Ch3) | (S & ~Ch7 & Ch6 & Ch5 & ~Ch4 & ~Ch3) | (S & Ch7 & ~Ch6 & Ch5 & ~Ch4 & ~Ch3);
+	assign C3 = (S & ~Ch7 & Ch6 & ~Ch5 & ~Ch4 & Ch3) | (S & ~Ch7 & Ch6 & ~Ch5 & Ch4 & ~Ch3) | (S & ~Ch7 & Ch6 & Ch5 & ~Ch4 & ~Ch3) | (S & Ch7 & Ch6 & ~Ch5 & ~Ch4 & ~Ch3);
+	assign C4 = (S & Ch7 & ~Ch6 & ~Ch5 & ~Ch4 & Ch3) | (S & Ch7 & ~Ch6 & ~Ch5 & Ch4 & ~Ch3) | (S & Ch7 & ~Ch6 & Ch5 & ~Ch4 & ~Ch3) | (S & Ch7 & Ch6 & ~Ch5 & ~Ch4 & ~Ch3);
+	
+endmodule	
