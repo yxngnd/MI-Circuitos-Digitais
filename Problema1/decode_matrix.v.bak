@@ -1,0 +1,28 @@
+module decode_matrix(ch0, ch1, ch2, ch3, ch4, c0, c1, c2, c3, c4, Display);
+	input ch0, ch1, ch2, ch3, ch4;
+	output c0, c1, c2, c3, c4, Display;
+
+
+	// Portas lógicas "or" intermediárias
+	wire [8:0] or1, or2, or3, or4;
+
+	assign or1 = {~ch0, ~ch1, ~ch2};
+	assign or2 = {~ch1, ch2, ~ch3};
+	assign or3 = {~ch0, ch1, ~ch3, ~ch4};
+	assign or4 = {~ch0, ch2, ch3, ch4};
+
+	assign or1 = or1 | {ch0, ch1, ch2};
+	assign or2 = or2 | {~ch0, ch1, ch3} | {ch0, ~ch1, ~ch2};
+	assign or3 = or3 | {ch1, ch2, ch4} | {~ch0, ch1, ch2, ch3};
+	assign or4 = or4 | {ch0, ch1, ch3, ch4} | {ch0, ch2, ch4} | {~ch0, ch2, ch3, ch4};
+
+	// Saídas do módulo
+	assign c0 = ch0 & ~ch1 & ch2 & ~ch3 & ch4 | ch0 & ~ch1 & ~ch2 & ~ch3 & ch4 | ch0 & ~ch1 & ~ch2 & ch3 & ch4 | ch0 & ch1 & ~ch2 & ~ch3 & ch4;
+	assign c1 = ~ch0 & ch1 & ch2 & ~ch3 & ch4 | ch0 & ch1 & ~ch2 & ~ch3 & ch4 | ~ch0 & ch1 & ~ch2 & ~ch3 & ch4 | ~ch0 & ch1 & ~ch2 & ch3 & ch4;
+	assign c2 = ~ch0 & ch1 & ch2 & ~ch3 & ch4 | ch0 & ~ch1 & ch2 & ch3 & ch4 | ~ch0 & ~ch1 & ch2 & ch3 & ch4 | ~ch0 & ~ch1 & ch2 & ~ch3 & ch4;
+	assign c3 = ~ch0 & ~ch1 & ~ch2 & ch3 & ch4 | ~ch0 & ~ch1 & ch2 & ch3 & ch4 | ~ch0 & ch1 & ch2 & ch3 & ch4 | ch0 & ~ch1 & ~ch2 & ch3 & ch4;
+	assign c4 = ~ch0 & ~ch1 & ~ch2 & ch3 & ch4 | ~ch0 & ~ch1 & ch2 & ~ch3 & ch4 | ~ch0 & ch1 & ch2 & ~ch3 & ch4 | ch0 & ~ch1 & ch2 & ~ch3 & ch4;
+
+	assign Display = or1 | or2 | or3 | or4;
+
+endmodule
