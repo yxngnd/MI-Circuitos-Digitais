@@ -1,12 +1,11 @@
 |main
-A <= show_disp:circuit_show_disp.port0
-B <= show_disp:circuit_show_disp.port1
-C <= show_disp:circuit_show_disp.port2
-D <= show_disp:circuit_show_disp.port3
-E <= show_disp:circuit_show_disp.port4
-F <= show_disp:circuit_show_disp.port5
-G <= show_disp:circuit_show_disp.port6
-V <= show_disp:circuit_show_disp.port7
+A << show_disp:circuit_show_disp.port0
+B << show_disp:circuit_show_disp.port1
+C << show_disp:circuit_show_disp.port2
+D << show_disp:circuit_show_disp.port3
+E << show_disp:circuit_show_disp.port4
+F << show_disp:circuit_show_disp.port5
+G << show_disp:circuit_show_disp.port6
 Ch7 => Ch7.IN2
 Ch6 => Ch6.IN2
 Ch5 => Ch5.IN2
@@ -15,20 +14,18 @@ Ch3 => Ch3.IN2
 Ch2 => Ch2.IN1
 Ch1 => Ch1.IN1
 Ch0 => Ch0.IN1
-l0 <= matrix_line:circuit_matrix_line.port3
-l1 <= matrix_line:circuit_matrix_line.port4
-l2 <= matrix_line:circuit_matrix_line.port5
-l3 <= matrix_line:circuit_matrix_line.port6
-l4 <= matrix_line:circuit_matrix_line.port7
-l5 <= matrix_line:circuit_matrix_line.port8
-l6 <= matrix_line:circuit_matrix_line.port9
-c0 <= decode_matrix:circuit_decode_matrix.port5
-c1 <= decode_matrix:circuit_decode_matrix.port6
-c2 <= decode_matrix:circuit_decode_matrix.port7
-c3 <= decode_matrix:circuit_decode_matrix.port8
-c4 <= decode_matrix:circuit_decode_matrix.port9
-Disp1 <= decode_matrix:circuit_decode_matrix.port10
-Disp2 <= matrix_line:circuit_matrix_line.port10
+l0 << matrix_line:circuit_matrix_line.port3
+l1 << matrix_line:circuit_matrix_line.port4
+l2 << matrix_line:circuit_matrix_line.port5
+l3 << matrix_line:circuit_matrix_line.port6
+l4 << matrix_line:circuit_matrix_line.port7
+l5 << matrix_line:circuit_matrix_line.port8
+l6 << matrix_line:circuit_matrix_line.port9
+c0 << decode_matrix:circuit_decode_matrix.port5
+c1 << decode_matrix:circuit_decode_matrix.port6
+c2 << decode_matrix:circuit_decode_matrix.port7
+c3 << decode_matrix:circuit_decode_matrix.port8
+c4 << decode_matrix:circuit_decode_matrix.port9
 
 
 |main|show_disp:circuit_show_disp

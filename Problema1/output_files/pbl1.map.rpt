@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pbl1
-Wed Mar 15 20:53:10 2023
+Thu Mar 16 01:56:57 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -14,7 +14,9 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "decode_matrix:circuit_decode_matrix"
+ 10. Port Connectivity Checks: "show_disp:circuit_show_disp"
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -41,13 +43,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Wed Mar 15 20:53:10 2023       ;
+; Analysis & Synthesis Status ; Successful - Thu Mar 16 01:56:57 2023       ;
 ; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name               ; pbl1                                        ;
 ; Top-level Entity Name       ; main                                        ;
 ; Family                      ; MAX II                                      ;
-; Total logic elements        ; 40                                          ;
-; Total pins                  ; 30                                          ;
+; Total logic elements        ; 31                                          ;
+; Total pins                  ; 27                                          ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -140,16 +142,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                         ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
-; main.v                           ; yes             ; User Verilog HDL File  ; C:/Users/yangd/OneDrive/Documentos/MI - CD/Problema1/main.v          ;         ;
-; show_disp.v                      ; yes             ; User Verilog HDL File  ; C:/Users/yangd/OneDrive/Documentos/MI - CD/Problema1/show_disp.v     ;         ;
-; matrix_line.v                    ; yes             ; User Verilog HDL File  ; C:/Users/yangd/OneDrive/Documentos/MI - CD/Problema1/matrix_line.v   ;         ;
-; decode_matrix.v                  ; yes             ; User Verilog HDL File  ; C:/Users/yangd/OneDrive/Documentos/MI - CD/Problema1/decode_matrix.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                     ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                       ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+---------+
+; main.v                           ; yes             ; User Verilog HDL File  ; C:/Users/yangd/Dev/MI-Circuitos-Digitais/Problema1/main.v          ;         ;
+; show_disp.v                      ; yes             ; User Verilog HDL File  ; C:/Users/yangd/Dev/MI-Circuitos-Digitais/Problema1/show_disp.v     ;         ;
+; matrix_line.v                    ; yes             ; User Verilog HDL File  ; C:/Users/yangd/Dev/MI-Circuitos-Digitais/Problema1/matrix_line.v   ;         ;
+; decode_matrix.v                  ; yes             ; User Verilog HDL File  ; C:/Users/yangd/Dev/MI-Circuitos-Digitais/Problema1/decode_matrix.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -157,20 +159,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 40    ;
-;     -- Combinational with no register       ; 40    ;
+; Total logic elements                        ; 31    ;
+;     -- Combinational with no register       ; 31    ;
 ;     -- Register only                        ; 0     ;
 ;     -- Combinational with a register        ; 0     ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 19    ;
-;     -- 3 input functions                    ; 15    ;
-;     -- 2 input functions                    ; 6     ;
+;     -- 4 input functions                    ; 12    ;
+;     -- 3 input functions                    ; 12    ;
+;     -- 2 input functions                    ; 7     ;
 ;     -- 1 input functions                    ; 0     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 40    ;
+;     -- normal mode                          ; 31    ;
 ;     -- arithmetic mode                      ; 0     ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
@@ -178,11 +180,11 @@ https://fpgasoftware.intel.com/eula.
 ;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 0     ;
-; I/O pins                                    ; 30    ;
+; I/O pins                                    ; 27    ;
 ; Maximum fan-out node                        ; Ch7   ;
-; Maximum fan-out                             ; 18    ;
-; Total fan-out                               ; 155   ;
-; Average fan-out                             ; 2.21  ;
+; Maximum fan-out                             ; 14    ;
+; Total fan-out                               ; 117   ;
+; Average fan-out                             ; 2.02  ;
 +---------------------------------------------+-------+
 
 
@@ -191,10 +193,10 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node               ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                       ; Entity Name   ; Library Name ;
 +------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------+---------------+--------------+
-; |main                                    ; 40 (0)      ; 0            ; 0          ; 30   ; 0            ; 40 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main                                     ; main          ; work         ;
-;    |decode_matrix:circuit_decode_matrix| ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|decode_matrix:circuit_decode_matrix ; decode_matrix ; work         ;
-;    |matrix_line:circuit_matrix_line|     ; 7 (7)       ; 0            ; 0          ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|matrix_line:circuit_matrix_line     ; matrix_line   ; work         ;
-;    |show_disp:circuit_show_disp|         ; 23 (23)     ; 0            ; 0          ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|show_disp:circuit_show_disp         ; show_disp     ; work         ;
+; |main                                    ; 31 (0)      ; 0            ; 0          ; 27   ; 0            ; 31 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main                                     ; main          ; work         ;
+;    |decode_matrix:circuit_decode_matrix| ; 9 (9)       ; 0            ; 0          ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|decode_matrix:circuit_decode_matrix ; decode_matrix ; work         ;
+;    |matrix_line:circuit_matrix_line|     ; 6 (6)       ; 0            ; 0          ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|matrix_line:circuit_matrix_line     ; matrix_line   ; work         ;
+;    |show_disp:circuit_show_disp|         ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |main|show_disp:circuit_show_disp         ; show_disp     ; work         ;
 +------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+-------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -214,36 +216,54 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decode_matrix:circuit_decode_matrix"                                                   ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Display ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "show_disp:circuit_show_disp"                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; V    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Wed Mar 15 20:52:43 2023
+    Info: Processing started: Thu Mar 16 01:56:41 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pbl1 -c pbl1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file main.v
-    Info (12023): Found entity 1: main File: C:/Users/yangd/OneDrive/Documentos/MI - CD/Problema1/main.v Line: 1
+    Info (12023): Found entity 1: main File: C:/Users/yangd/Dev/MI-Circuitos-Digitais/Problema1/main.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file show_disp.v
-    Info (12023): Found entity 1: show_disp File: C:/Users/yangd/OneDrive/Documentos/MI - CD/Problema1/show_disp.v Line: 1
+    Info (12023): Found entity 1: show_disp File: C:/Users/yangd/Dev/MI-Circuitos-Digitais/Problema1/show_disp.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file matrix_line.v
-    Info (12023): Found entity 1: matrix_line File: C:/Users/yangd/OneDrive/Documentos/MI - CD/Problema1/matrix_line.v Line: 1
+    Info (12023): Found entity 1: matrix_line File: C:/Users/yangd/Dev/MI-Circuitos-Digitais/Problema1/matrix_line.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file decode_matrix.v
-    Info (12023): Found entity 1: decode_matrix File: C:/Users/yangd/OneDrive/Documentos/MI - CD/Problema1/decode_matrix.v Line: 1
+    Info (12023): Found entity 1: decode_matrix File: C:/Users/yangd/Dev/MI-Circuitos-Digitais/Problema1/decode_matrix.v Line: 1
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Info (12128): Elaborating entity "show_disp" for hierarchy "show_disp:circuit_show_disp" File: C:/Users/yangd/OneDrive/Documentos/MI - CD/Problema1/main.v Line: 9
-Info (12128): Elaborating entity "decode_matrix" for hierarchy "decode_matrix:circuit_decode_matrix" File: C:/Users/yangd/OneDrive/Documentos/MI - CD/Problema1/main.v Line: 10
-Info (12128): Elaborating entity "matrix_line" for hierarchy "matrix_line:circuit_matrix_line" File: C:/Users/yangd/OneDrive/Documentos/MI - CD/Problema1/main.v Line: 11
-Info (21057): Implemented 70 device resources after synthesis - the final resource count might be different
+Info (12128): Elaborating entity "show_disp" for hierarchy "show_disp:circuit_show_disp" File: C:/Users/yangd/Dev/MI-Circuitos-Digitais/Problema1/main.v Line: 9
+Info (12128): Elaborating entity "decode_matrix" for hierarchy "decode_matrix:circuit_decode_matrix" File: C:/Users/yangd/Dev/MI-Circuitos-Digitais/Problema1/main.v Line: 10
+Info (12128): Elaborating entity "matrix_line" for hierarchy "matrix_line:circuit_matrix_line" File: C:/Users/yangd/Dev/MI-Circuitos-Digitais/Problema1/main.v Line: 11
+Info (21057): Implemented 58 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 40 logic cells
+    Info (21059): Implemented 19 output pins
+    Info (21061): Implemented 31 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4691 megabytes
-    Info: Processing ended: Wed Mar 15 20:53:10 2023
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:45
+    Info: Processing ended: Thu Mar 16 01:56:57 2023
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:38
 
 
